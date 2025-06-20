@@ -1,19 +1,20 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
+import MyTable from './Table';
 
 function Userform() {
   const [form] = Form.useForm();
 
-  // Esta función se ejecuta al hacer submit correctamente
   const handleSubmit = (values: any) => {
     console.log('Todos los datos del formulario:', values);
   };
 
   return (
+    <>
     <Form
       form={form}
       name="basic"
-      onFinish={handleSubmit} // evento de submit
+      onFinish={handleSubmit}
       autoComplete="off"
     >
       <Form.Item
@@ -42,6 +43,8 @@ function Userform() {
         </Button>
       </Form.Item>
     </Form>
+    <MyTable/>
+    </>
   );
 }
 
